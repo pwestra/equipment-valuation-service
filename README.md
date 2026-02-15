@@ -236,3 +236,9 @@ This mirrors team-based development workflows.
 # Author
 
 Peter Westra
+
+## Gitflow
+This repo uses a simplified Gitflow model.
+
+## Release
+v1.0.0 - Initial release.
