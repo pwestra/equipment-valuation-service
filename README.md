@@ -76,12 +76,7 @@ Run:
 ```bash
 docker run -p 8000:8000 valuation-service:latest
 ```
-
-Service will be available at:
-
-http://localhost:8000
-
-Swagger UI:
+Service can be accessed through Swagger UI:
 
 http://localhost:8000/docs
 
@@ -138,9 +133,30 @@ Example Response:
 
 ---
 
-# Running Tests
+## Tests
+
+This project includes automated tests to validate the API’s core functionality and error handling.
+
+### What is Tested
+
+The tests use FastAPI’s `TestClient` to exercise the API in-memory (no server needed). They verify:
+
+- ✅ Correct valuation calculation for valid inputs  
+- ✅ Proper rounding of market and auction values  
+- ✅ Handling of out-of-range model years  
+- ✅ 404 response for unknown classification IDs  
+- ✅ 422 response when valuation ratios are missing  
+
+These tests ensure both business logic and API response behavior are correct.
+
+---
+
+### How to Run Tests
+
+Make sure the virtual environment folder has already been created from command shown above (ie. python3 -m venv .venv)
 
 ```bash
+source .venv/bin/activate
 pytest -q
 ```
 
