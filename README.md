@@ -86,7 +86,7 @@ http://localhost:8000/docs
 
 Prerequisite: Python 3.11+
 
-With this alternative method I suggest using a virtual environment to avoid 
+With this alternative method, I suggest using a virtual environment to avoid 
 affecting local python installations
 
 Linux / macOS / WSL:
@@ -161,6 +161,50 @@ pytest -q
 ```
 
 ---
+
+## Continuous Integration
+
+This project uses GitHub Actions for continuous integration (CI) to automatically validate code quality and functionality on each push and pull request.
+
+### What CI Does
+
+The CI pipeline runs the following checks:
+
+- **Linting (Ruff)**  
+  Ensures consistent code style and catches common issues.
+
+- **Formatting Check (Black)**  
+  Verifies that code formatting is standardized.
+
+- **Static Type Checking (mypy)**  
+  Detects type-related issues before runtime.
+
+- **Automated Tests (pytest)**  
+  Runs the API tests to confirm correct functionality and error handling.
+
+---
+
+### When CI Runs
+
+CI is triggered automatically on:
+
+- Pushes to `main` and `develop`
+- Pull requests targeting `main` or `develop`
+
+This ensures that key branches remain stable and production-ready.
+
+---
+
+### Why CI is Included
+
+Including CI demonstrates:
+
+- Reproducible builds  
+- Automated quality checks  
+- Confidence in code changes  
+- Production-minded workflow  
+
+All changes are validated automatically before being merged.
 
 # Data File
 
